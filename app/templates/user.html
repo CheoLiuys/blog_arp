@@ -17,12 +17,11 @@
 		
 		<title>PYE2博客后台系统</title>
 		
-		<!-- css -->
-		<link href="css/bootstrap.min.css" rel="stylesheet">
-		<link href="css/styles.css" rel="stylesheet">
-		<link href="css/wangEditor.min.css" rel="stylesheet" type="text/css">
+		<!-- admin_css -->
+		<link href="static/admin_css/bootstrap.min.css" rel="stylesheet">
+		<link href="static/admin_css/styles.css" rel="stylesheet">
 
-		<!-- js -->
+		<!-- admin_js -->
 		<!--[if lt IE 9]>
 		  <script src="https://cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js"></script>
 		  <script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
@@ -53,47 +52,54 @@
 		<div class="row">
 			<aside class="col-sm-3 col-md-2 col-lg-2 sidebar">
 				<ul class="nav nav-sidebar">
-					<li><a href="index.html">概况</a></li>
-					<li class="active"><a href="article.html">文章</a></li>
-					<li><a href="category.html">文章分类</a></li>
-					<li><a href="user.html">用户</a></li>
+					<li><a href="/admin">概况</a></li>
+					<li><a href="/admin_article">文章</a></li>
+					<li><a href="/category">文章分类</a></li>
+					<li class="active"><a href="/user">用户</a></li>
 				</ul>
 			</aside>
 			<div class="col-sm-9 col-sm-offset-3 col-md-10 col-lg-10 col-md-offset-2 main" id="main">
-				<h3>发布文章</h3>
-				<form>
-					<div class="form-group">
-						<label for="article_category">文章分类</label>
-						<select class="form-control" id="article_category" name="category">
-							<option>1</option>
-							<option>2</option>
-							<option>3</option>
-							<option>4</option>
-							<option>5</option>
-						</select>
+				<h3>查看</h3>
+				<div>
+					<table class="table table-striped table-hover">
+						<thead>
+							<tr>
+								<th><span class="glyphicon glyphicon-file"></span>用户ID</th>
+								<th><span class="glyphicon glyphicon-list"></span>用户名</th>
+								<th class="hidden-sm"><span class="glyphicon glyphicon-tag"></span>头像</th>
+								<th class="hidden-sm"><span class="glyphicon glyphicon-comment"></span>评论条数</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+							<td>1</td>
+							<td>Python</td>
+							<td><img src="http://cdn2.jianshu.io/assets/default_avatar/5-33d2da32c552b8be9a0548c7a4576607.jpg" alt="头像" width="20" height="20"></td>
+							<td>5</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+				
+				<div class="clearfix">
+					<div class="pull-right">
+						<ul class="pagination pagenav">
+							<li class="disabled"><a aria-label="Previous"> <span aria-hidden="true">&laquo;</span></a></li>
+							<li class="active"><a href="#">1</a></li>
+							<li><a href="#">2</a></li>
+							<li><a href="#">3</a></li>
+							<li><a href="#">4</a></li>
+							<li><a href="#">5</a></li>
+							<li><a href="#" aria-label="Next"> <span aria-hidden="true">&raquo;</span></a></li>
+						</ul>
 					</div>
-					<div class="form-group">
-						<label for="article_title">文章标题</label>
-						<input type="text" class="form-control" id="article_title" name="title" placeholder="请输入文章标题">
-					</div>
-					<div>
-						<textarea id="editor" style="height:400px"></textarea>
-					</div>
-					<button type="submit" class="btn btn-default">发布</button>
-				</form>
+				</div>
 			</div>
 		</div>
 		
 	</section>
 		<!-- jQuery  -->
-		<script src="js/jquery-3.2.1.min.js"></script>
-		<script src="js/bootstrap.min.js"></script>
-		<script type="text/javascript" src="js/wangEditor.min.js"></script>
-		<script type="text/javascript">
-			var textarea = document.getElementById('editor');
-			// 生成编辑器
-			var editor = new wangEditor(textarea);
-			editor.create();
-		</script>
+		<script src="static/admin_js/jquery-3.2.1.min.js"></script>
+		<script src="static/admin_js/bootstrap.min.js"></script>
 	</body>
 </html>
